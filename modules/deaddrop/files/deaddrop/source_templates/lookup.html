@@ -34,7 +34,7 @@ $if msgs:
 
 <p style="padding-bottom: 0"><b>Upload a file:</b></p>
 <div id="browse-select">
-	<input type="file" name="fh" autocomplete="off"/> 
+	<input id="fh" type="file" name="fh" autocomplete="off"/> 
 </div>
 
 <p><b>Or just enter a message:</b></p>
@@ -54,3 +54,17 @@ $if msgs:
 
 
 </div>
+<script type="text/javascript">
+// Test if web workers are available to do PDF metadata scanning
+window.PDFJS = {};
+if (window.Worker){
+  window.PDFJS.workerSrc = '/static/js/pdf.worker.js';
+}else{
+  window.PDFJS.disableWorker = true;
+}
+</script>
+<!--[if gt IE 9]><!-->
+<script type="text/javascript" src="/static/js/compatibility.js"></script>
+<script type="text/javascript" src="/static/js/pdf.js"></script>
+<!--<![endif]-->
+<script type="text/javascript" src="/static/js/metadata-scan.js"></script>
