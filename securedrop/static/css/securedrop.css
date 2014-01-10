@@ -362,3 +362,11 @@ p.header-warning {
 .powered img {
   vertical-align: middle;
 }
+
+/* TGM */
+body {
+  color: rgb(51, 51, 51);
+  font-family: Cambria, Georgia, Times, "Times New Roman", serif;
+  font-size: 16px;
+  line-height: 24px;
+}
